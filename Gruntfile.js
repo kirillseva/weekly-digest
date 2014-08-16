@@ -386,13 +386,7 @@ module.exports = function (grunt) {
       },
       heroku: {
         options: {
-          remote: 'heroku',
-          branch: 'master'
-        }
-      },
-      openshift: {
-        options: {
-          remote: 'openshift',
+          remote: 'git@heroku.com:weekly-digest.git',
           branch: 'master'
         }
       }
@@ -612,8 +606,6 @@ module.exports = function (grunt) {
       'watch'
     ]);
   });
-
-  grunt.loadNpmTasks('grunt-build-control');
 
   grunt.registerTask('server', function () {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');

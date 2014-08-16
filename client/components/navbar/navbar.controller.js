@@ -2,10 +2,20 @@
 
 angular.module('weeklyDigestApp')
   .controller('NavbarCtrl', function ($scope, $location) {
-    $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
-    }];
+    $scope.menu = [
+    {
+      'title': 'About',
+      'link': '#'
+    },
+    {
+      'title': 'Blog',
+      'link': '#'
+    },
+    {
+      'title': 'Donate',
+      'link': '#'
+    }
+    ];
 
     $scope.isCollapsed = true;
 

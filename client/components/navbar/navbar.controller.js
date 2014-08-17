@@ -8,10 +8,6 @@ angular.module('weeklyDigestApp')
       'link': '/about'
     },
     {
-      'title': 'Blog',
-      'link': '#'
-    },
-    {
       'title': 'Donate',
       'link': '#'
     }

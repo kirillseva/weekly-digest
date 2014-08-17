@@ -5,7 +5,7 @@ angular.module('weeklyDigestApp')
     $scope.menu = [
     {
       'title': 'About',
-      'link': '#'
+      'link': '/about'
     },
     {
       'title': 'Blog',

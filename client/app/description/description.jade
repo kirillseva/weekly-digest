@@ -1,0 +1,15 @@
+div(ng-include='"components/navbar/navbar.html"')
+
+header#banner.hero-unit
+  .container
+    h1 About
+    p.lead {{about}}
+    img(src='assets/images/yeoman.png', alt='I\'m Yeoman')
+
+
+footer.footer
+  .container
+    p
+      | Angular Fullstack v2.0.10
+      = ' | '
+      a(href='https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open') Issues

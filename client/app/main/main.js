@@ -7,5 +7,6 @@ angular.module('weeklyDigestApp')
         url: '/',
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
-      });
+      })
+
   });

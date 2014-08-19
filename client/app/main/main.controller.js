@@ -9,7 +9,7 @@ angular.module('weeklyDigestApp')
   $scope.picture = "";
 
   $http.get('http://8tracks.com/users/'+ username +'/mixes.json?api_key=' + api + '?api_version=3').success(function(all_mixes) {
-    var latest_mix = all_mixes.mix_set.mixes[0];
+    var latest_mix = all_mixes.mix_set.mixes[1];
     var mix_id = latest_mix.id;
     $scope.name = latest_mix.name;
     $scope.picture = latest_mix.cover_urls.sq500;

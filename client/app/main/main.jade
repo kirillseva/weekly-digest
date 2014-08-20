@@ -4,8 +4,11 @@ div(ng-include='"components/navbar/navbar.html"')
 header#banner.hero-unit
   .container
     p.lead {{EightTracks.name}}
-    h1
-      i(class="fa fa-pause")
+    div.controls
+      h1
+        i(class="fa fa-pause")
+        p
+        i(class="fa fa-forward")
     img(src="{{EightTracks.picture}}", alt="{{EightTracks.name}}")
 
 
@@ -17,3 +20,5 @@ footer.footer
       | Kirill Sevastyanenko
       = ' | '
       | 2014
+
+audio(id="player", type="audio/mpeg")

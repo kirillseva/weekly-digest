@@ -16,7 +16,8 @@
     "marked": "^0.3.2",
     "method-override": "~1.0.0",
     "morgan": "~1.0.0",
-    "static-favicon": "~1.0.1"
+    "static-favicon": "~1.0.1",
+    "newrelic": ">=0.9"
   },
   "devDependencies": {
     "connect-livereload": "~0.4.0",

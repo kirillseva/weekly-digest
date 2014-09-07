@@ -6,4 +6,7 @@ before_script:
   - npm install -g bower grunt-cli
   - gem install sass
   - bower install
-services: mongodb
+  - grunt build
+# services: mongodb
+notifications:
+  email: false

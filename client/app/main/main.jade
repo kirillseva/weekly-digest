@@ -6,9 +6,8 @@ div(ng-include='"components/navbar/navbar.html"')
   h1.controls
     i(class="fa fa-pause" ng-show="playing" ng-click="pauseTrack()")
     i(class="fa fa-play" ng-hide="playing" ng-click="playTrack()")
-    p
     i(class="fa fa-forward" ng-class="{disabled: currentSkips===0}" ng-click="skipTrack()")
-  img(src="{{albumArt}}", alt="{{currentMix.name}}" style="float: center; width:80%; margin:2rem; max-width:500px;")
+  img(class="albumArt" src="{{albumArt}}", alt="{{currentMix.name}}")
   p.lead {{name}}
   .progress(id="progress" style="width: {{progress}}%")
 

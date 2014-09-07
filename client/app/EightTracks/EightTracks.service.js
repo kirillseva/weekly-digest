@@ -23,7 +23,7 @@ angular.module('weeklyDigestApp')
       return $http.get("http://8tracks.com/sets/" + $rootScope.playToken + "/next.json?mix_id=" + mix + "&" + api);
     },
     reportSong: function(track_id, mix_id) {
-      return $http.get("http://8tracks.com/sets/" + $rootScope.playToken + "/report.xml?track_id=" + track_id + "&mix_id=" + mix_id);
+      return $http.get("http://8tracks.com/sets/" + $rootScope.playToken + "/report.xml?track_id=" + track_id + "&mix_id=" + mix_id + "&" + api);
     }
   };
   return EightTracks;

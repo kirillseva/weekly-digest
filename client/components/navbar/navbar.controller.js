@@ -4,12 +4,12 @@ angular.module('weeklyDigestApp')
   .controller('NavbarCtrl', function ($scope, $location) {
     $scope.menu = [
     {
-      'title': 'About',
-      'link': '/about'
+      'title': 'Player',
+      'link': '/'
     },
     {
-      'title': 'Donate',
-      'link': '#'
+      'title': 'About',
+      'link': '/about'
     }
     ];
 

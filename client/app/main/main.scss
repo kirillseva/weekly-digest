@@ -36,9 +36,25 @@
     background: #4393B9;
 }
 
+.container {
+  text-align: center;
+}
+
 .footer {
     text-align: center;
     padding: 30px 0;
     margin-top: 70px;
     border-top: 1px solid #E5E5E5;
+}
+
+.disabled {
+  color: #B5B5B5;
+}
+
+.progress{
+  -webkit-appearance: none;
+   appearance: none;
+
+  width: 250px;
+  height: 20px;
 }

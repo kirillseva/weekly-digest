@@ -2,16 +2,132 @@
 
 
 angular.module('weeklyDigestApp')
-.controller('MainCtrl', function ($scope, $http, EightTracks, Audio) {
+.controller('MainCtrl', function ($document, $rootScope, $scope, $http, EightTracks, Audio, Player) {
   // first, create a play token for the user
+  $scope.loading = true;
+
+  //get the mixes
+  //for now 200 mixes maximum. If need be, will extend to 300
+  if($rootScope.mixes.length === 0) {
+    EightTracks.getMixes(1)
+    .success(function(data) {
+      $rootScope.mixes = data.mix_set.mixes;
+      $rootScope.currentMix = data.mix_set.mixes[0];
+      // console.log($rootScope.currentMix);
+      $rootScope.albumArt = decodeURIComponent($rootScope.currentMix.cover_urls.sq500);
+      $scope.loading = false;
+    })
+    .error(function() {
+      console.log('Unable to retrieve mix.');
+    })
+    .then(function() {
+      EightTracks.getMixes(2)
+      .success(function(data) {
+        $rootScope.mixes = $rootScope.mixes.concat(data.mixes);
+      })
+      .error(function() {
+        console.log('Unable to retrieve mix.');
+      })
+    });
+  }
+
+  $rootScope.$watch('currentMix', function(newVal, oldVal) {
+    if(newVal !== null && newVal!==oldVal) {
+      console.log("hello!");
+      EightTracks.getSet($rootScope.currentMix.id)
+      .success(function(data) {
+        $rootScope.set = data.set;
+        $rootScope.atLastTrack = data.set.at_last_track;
+        if($rootScope.playing) {
+          Player.startTrack(data.set.track);
+          $rootScope.currentSkips = $rootScope.skips;
+        }
+      })
+      .error(function() {
+        console.log('Unable to retrieve set.');
+      });
+    }
+  });
+
+
+  $scope.selectMix = function(mix) {
+    $rootScope.currentMix = mix;
+    $rootScope.albumArt = decodeURIComponent($rootScope.currentMix.cover_urls.sq500);
+    Player.startTrack(data.set.track);
+  };
+
+  $scope.pauseTrack = function() {
+    Player.pause();
+  };
+
+  $scope.playTrack = function() {
+    Player.play();
+  };
+
+  $scope.skipTrack = function() {
+    if($rootScope.atLastTrack) {
+      var index = $rootScope.mixes.indexOf($rootScope.currentMix);
+      $rootScope.$apply(function() {
+        if(index === $rootScope.mixes.length-1) {
+          EightTracks.createNewPlayToken()
+            .success(function(data) {
+              //restart brah
+              $rootScope.playToken = data.play_token;
+              $rootScope.currentMix = $rootScope.mixes[0];
+              $rootScope.albumArt = decodeURIComponent($rootScope.currentMix.cover_urls.sq500);
+            })
+            .error(function() {
+              console.log('Unable to create play token.');
+            });
+        } else {
+          $rootScope.currentMix = $rootScope.mixes[index+1];
+          $rootScope.albumArt = decodeURIComponent($rootScope.currentMix.cover_urls.sq500);
+        }
+      });
+    } else {
+      EightTracks.skip($rootScope.currentMix.id)
+        .success(function(data) {
+          $rootScope.currentSkips--;
+          $rootScope.set = data.set;
+          $rootScope.atLastTrack = data.set.at_last_track;
+          Player.startTrack(data.set.track);
+        })
+        .error(function(data) {
+          console.log(data.notices);
+        });
+    }
+  };
+
+  $document.bind('keypress', function(e) {
+    if(e.keyCode == 32 && $rootScope.playing) {
+      Player.pause();
+      $scope.$apply();
+    } else if(e.keyCode == 32) {
+      Player.play();
+      $scope.$apply();
+    }
+  });
+
+
+});
+
+angular.module('weeklyDigestApp')
+.run(function($rootScope, EightTracks) {
+  $rootScope.mixes = [];
+  $rootScope.currentMix = null;
+  $rootScope.aside = false;
+  $rootScope.set = null;
+  $rootScope.playing = false;
+  $rootScope.atLastTrack = false;
+  $rootScope.skips = 3;
+  $rootScope.currentSkips = 3;
+  $rootScope.name="";
+
   EightTracks.getPlayToken()
   .success(function(data) {
-    $scope.playToken = data.play_token;
+    $rootScope.playToken = data.play_token;
   })
   .error(function() {
     console.log('Unable to create play token.');
   });
-
-
-  $scope.Audio = Audio;
 });

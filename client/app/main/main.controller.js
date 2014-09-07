@@ -121,7 +121,8 @@ angular.module('weeklyDigestApp')
   $rootScope.atLastTrack = false;
   $rootScope.skips = 3;
   $rootScope.currentSkips = 3;
-  $rootScope.name="";
+  $rootScope.name = "";
+  $rootScope.progress = 0;
 
   EightTracks.getPlayToken()
   .success(function(data) {

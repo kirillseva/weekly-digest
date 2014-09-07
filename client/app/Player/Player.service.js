@@ -44,6 +44,7 @@
               .success(function(data) {
                 $rootScope.playToken = data.play_token;
                 $rootScope.currentMix = $rootScope.mixes[0];
+                $rootScope.albumArt = decodeURIComponent($rootScope.currentMix.cover_urls.sq500);
               })
               .error(function() {
                 console.log('Unable to create play token.');
@@ -51,6 +52,7 @@
             } else {
               //next mix
               $rootScope.currentMix = $rootScope.mixes[index+1];
+              $rootScope.albumArt = decodeURIComponent($rootScope.currentMix.cover_urls.sq500);
             }
           });
         } else {
@@ -60,6 +62,7 @@
             $rootScope.playing = true;
             $rootScope.atLastTrack = data.set.at_last_track;
             Audio.src = data.set.track.track_file_stream_url;
+            $rootScope.name = data.set.track.name;
             Audio.play();
           })
           .error(function() {

@@ -673,6 +673,8 @@ module.exports = function (grunt) {
     'usemin'
   ]);
 
+  grunt.registerTask('deploy', ['build', 'buildcontrol']);
+
   grunt.registerTask('default', [
     'newer:jshint',
     'test',

@@ -3,15 +3,12 @@ div(ng-include='"components/navbar/navbar.html"')
 
 header#banner.hero-unit
   .container
-    p.lead {{EightTracks.name}}
-    div.controls
-      h1
-        i(class="fa fa-pause")
-        p
-        i(class="fa fa-forward")
+    p.lead {{name}}
+    h1.controls
+      i(class="fa fa-pause")
+      p
+      i(class="fa fa-forward")
     img(src="{{EightTracks.picture}}", alt="{{EightTracks.name}}")
-
-
 
 //- {{EightTracks.resp}}
 footer.footer

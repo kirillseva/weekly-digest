@@ -15,14 +15,12 @@
 }
 
 .fa-forward {
-    right: 34%;
     float: right;
-    position: absolute;
     cursor: pointer;
 }
 
 i {
-  display: inline;
+  display: inline-block;
 }
 
 .container {
@@ -43,15 +41,18 @@ i {
 .progress{
   -webkit-appearance: none;
    appearance: none;
-
   background-color: black;
   height: 5px;
 }
 
 .controls {
+  max-width: 400px;
+  width:70%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 7%;
+  -webkit-margin-bottom: 60px;
+     -moz-margin-bottom: 60px;
+          margin-bottom: 60px;
 }
 
 .albumArt {

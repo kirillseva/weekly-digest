@@ -8,7 +8,7 @@
         Audio.pause();
         Audio.src = track.track_file_stream_url;
         Audio.play();
-        $rootScope.name = track.name;
+        $rootScope.name = track.performer + " - " + track.name;
         $rootScope.playing = true;
         track.reported = false;
       },
@@ -62,7 +62,7 @@
             $rootScope.playing = true;
             $rootScope.atLastTrack = data.set.at_last_track;
             Audio.src = data.set.track.track_file_stream_url;
-            $rootScope.name = data.set.track.name;
+            $rootScope.name = data.set.track.performer + " - " + data.set.track.name;
             Audio.play();
           })
           .error(function() {

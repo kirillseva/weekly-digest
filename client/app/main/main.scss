@@ -1,41 +1,27 @@
-.thing-form {
-    margin: 20px 0;
-}
-
-#banner {
-    border-bottom: none;
-    margin-top: -20px;
-}
-
-#banner h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-}
-
 .fa-play {
     margin-left: auto;
     margin-right: auto;
     float: center;
+    position: absolute;
+    cursor: pointer;
 }
 
 .fa-pause {
+    margin-left: auto;
+    margin-right: auto;
     float: center;
+    position: absolute;
+    cursor: pointer;
 }
 
 .fa-forward {
     margin-right: 30%;
     float: right;
+    cursor: pointer;
 }
 
-
-.hero-unit {
-    position: relative;
-    padding: 30px 15px;
-    color: #F5F5F5;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
+i {
+  display: inline;
 }
 
 .container {
@@ -64,7 +50,7 @@
 .controls {
   margin-left: auto;
   margin-right: auto;
-  // letter-spacing: 100px;
+  margin-bottom: 7%;
 }
 
 .albumArt {
@@ -87,8 +73,8 @@
 }
 
 .mainArt img {
-  border: 10px solid #fff;
-  border-bottom: 45px solid #fff;
+  border: 10px solid #f7f7f7;
+  border-bottom: 45px solid #f7f7f7;
   -webkit-box-shadow: 3px 3px 3px #777;
      -moz-box-shadow: 3px 3px 3px #777;
           box-shadow: 3px 3px 3px #777;
@@ -101,4 +87,9 @@
   bottom: 0px;
   font: 400 22px/1 'HelveticaNeue-Light';
   color: #888;
+}
+
+.songName {
+  font: 400 22px/1 'HelveticaNeue-Light';
+  margin-top: 10px;
 }

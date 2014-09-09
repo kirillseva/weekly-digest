@@ -51,6 +51,7 @@
               });
             } else {
               //next mix
+              console.log("next mix!");
               $rootScope.currentMix = $rootScope.mixes[index+1];
               $rootScope.albumArt = decodeURIComponent($rootScope.currentMix.cover_urls.sq500);
             }

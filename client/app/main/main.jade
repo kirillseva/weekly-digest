@@ -9,11 +9,10 @@ div(ng-include='"components/navbar/navbar.html"')
     i(class="fa fa-forward" ng-class="{disabled: currentSkips===0}" ng-click="skipTrack()")
   div
   .mainArt
+    .progress(id="progress" style="width: {{progress}}%")
     p {{currentMix.name}}
     img(class="albumArt" src="{{albumArt}}", alt="{{currentMix.name}}")
   p.songName {{name}}
-  .progress(id="progress" style="width: {{progress}}%")
-
 
 
 footer.footer

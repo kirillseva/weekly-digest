@@ -2,7 +2,6 @@
     margin-left: auto;
     margin-right: auto;
     float: center;
-    position: absolute;
     cursor: pointer;
 }
 
@@ -10,12 +9,21 @@
     margin-left: auto;
     margin-right: auto;
     float: center;
-    position: absolute;
     cursor: pointer;
 }
 
 .fa-forward {
     float: right;
+    cursor: pointer;
+}
+
+.fa-volume-off {
+    float: left;
+    cursor: pointer;
+}
+
+.fa-volume-up {
+    float: left;
     cursor: pointer;
 }
 
@@ -51,9 +59,6 @@ i {
   width:70%;
   margin-left: auto;
   margin-right: auto;
-  -webkit-margin-bottom: 60px;
-     -moz-margin-bottom: 60px;
-          margin-bottom: 60px;
 }
 
 .albumArt {

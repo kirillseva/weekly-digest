@@ -64,6 +64,14 @@ angular.module('weeklyDigestApp')
     Player.play();
   };
 
+  $scope.mute = function() {
+    Player.mute();
+  }
+
+  $scope.unmute = function() {
+    Player.unmute();
+  }
+
   $scope.skipTrack = function() {
     if($rootScope.atLastTrack) {
       var index = $rootScope.mixes.indexOf($rootScope.currentMix);
@@ -123,6 +131,7 @@ angular.module('weeklyDigestApp')
   $rootScope.currentSkips = 3;
   $rootScope.name = "";
   $rootScope.progress = 0;
+  $rootScope.muted = false;
 
   EightTracks.getPlayToken()
   .success(function(data) {

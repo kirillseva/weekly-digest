@@ -24,6 +24,14 @@
         $rootScope.playing = false;
         Audio.pause();
       },
+      mute: function() {
+        $rootScope.muted = true;
+        Audio.volume = 0;
+      },
+      unmute: function() {
+        $rootScope.muted = false;
+        Audio.volume = 1;
+      },
       onTimeUpdate: function() {
         $rootScope.progress = (this.currentTime / this.duration) * 100;
         $document[0].getElementById('progress').style.width = $rootScope.progress.toString() + "%";

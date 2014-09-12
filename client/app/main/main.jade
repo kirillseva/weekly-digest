@@ -4,8 +4,8 @@ div(ng-include='"components/navbar/navbar.html"')
 
 .container
   h1.controls
-    i(class="fa fa-volume-up" ng-show="muted" ng-click="unmute()" tooltip="Unmute")
-    i(class="fa fa-volume-off" ng-hide="muted" ng-click="mute()" tooltip="Mute")
+    i(class="fa fa-volume-off" ng-show="muted" ng-click="unmute()" tooltip="Unmute")
+    i(class="fa fa-volume-up" ng-hide="muted" ng-click="mute()" tooltip="Mute")
     i(class="fa fa-pause" ng-show="playing" ng-click="pauseTrack()" tooltip="Pause")
     i(class="fa fa-play" ng-hide="playing" ng-click="playTrack()" tooltip="Play")
     i(class="fa fa-forward" ng-class="{disabled: currentSkips===0}" ng-click="skipTrack()" tooltip="Skip track")

@@ -26,3 +26,5 @@
 {"name":"newrelic","hostname":"Kirills-MacBook-Pro.local","pid":7857,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-09-12T03:24:20.198Z","v":0}
 {"name":"newrelic","hostname":"Kirills-MacBook-Pro.local","pid":7857,"component":"express","level":40,"msg":"Unrecognized version NaN of Express detected; not instrumenting","time":"2014-09-12T03:24:20.300Z","v":0}
 {"name":"newrelic","hostname":"Kirills-MacBook-Pro.local","pid":7857,"component":"collector_api","level":40,"msg":"No connection has been established to New Relic after 4 attempts.","time":"2014-09-12T03:25:21.400Z","v":0}
+{"name":"newrelic","hostname":"Kirills-MacBook-Pro.local","pid":1934,"level":30,"msg":"Starting New Relic for Node.js connection process.","time":"2014-09-13T03:44:57.363Z","v":0}
+{"name":"newrelic","hostname":"Kirills-MacBook-Pro.local","pid":1934,"component":"express","level":40,"msg":"Unrecognized version NaN of Express detected; not instrumenting","time":"2014-09-13T03:44:57.523Z","v":0}

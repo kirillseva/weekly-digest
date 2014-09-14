@@ -34,10 +34,13 @@
       },
       onTimeUpdate: function() {
         $rootScope.progress = (this.currentTime / this.duration) * 100;
-        $document[0].getElementById('progress').style.width = $rootScope.progress.toString() + "%";
+        if ($document[0].getElementById('progress') != null) {
+          $document[0].getElementById('progress').style.width = $rootScope.progress.toString() + "%";
+        };
         if(Math.floor(this.currentTime) === 30 && $rootScope.set.track.reported === false) {
           EightTracks.reportSong($rootScope.set.track.id, $rootScope.currentMix.id);
           $rootScope.set.track.reported = true;
+          console.log("logged");
           console.log($rootScope.set.track.id, $rootScope.currentMix.id);
         }
       },

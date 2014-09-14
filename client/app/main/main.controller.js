@@ -45,13 +45,6 @@ angular.module('weeklyDigestApp')
     }
   });
 
-
-  $scope.selectMix = function(mix) {
-    $rootScope.currentMix = mix;
-    $rootScope.albumArt = decodeURIComponent($rootScope.currentMix.cover_urls.sq500);
-    Player.startTrack(data.set.track);
-  };
-
   $scope.pauseTrack = function() {
     Player.pause();
   };
@@ -137,6 +130,8 @@ angular.module('weeklyDigestApp')
       EightTracks.getMixes(1)
       .success(function(data) {
         $rootScope.mixes = data.mix_set.mixes;
+        // delete $rootScope.mixes.length;
+        console.log($rootScope.mixes);
         $rootScope.currentMix = data.mix_set.mixes[0];
         // console.log($rootScope.currentMix);
         $rootScope.albumArt = decodeURIComponent($rootScope.currentMix.cover_urls.sq500);

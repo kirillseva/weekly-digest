@@ -8,6 +8,10 @@ angular.module('weeklyDigestApp')
       'link': '/'
     },
     {
+      'title': 'Mixes',
+      'link': '/mixes'
+    },
+    {
       'title': 'About',
       'link': '/about'
     }

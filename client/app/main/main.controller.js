@@ -5,27 +5,6 @@ angular.module('weeklyDigestApp')
 .controller('MainCtrl', function ($document, $rootScope, $scope, $http, EightTracks, Audio, Player) {
   //get the mixes
   //for now 200 mixes maximum. If need be, will extend to 300
-  // if($rootScope.mixes.length === 0) {
-  //   EightTracks.getMixes(1)
-  //   .success(function(data) {
-  //     $rootScope.mixes = data.mix_set.mixes;
-  //     $rootScope.currentMix = data.mix_set.mixes[0];
-  //     // console.log($rootScope.currentMix);
-  //     $rootScope.albumArt = decodeURIComponent($rootScope.currentMix.cover_urls.sq500);
-  //   })
-  //   .error(function() {
-  //     console.log('Unable to retrieve mix.');
-  //   })
-  //   .then(function() {
-  //     EightTracks.getMixes(2)
-  //     .success(function(data) {
-  //       $rootScope.mixes = $rootScope.mixes.concat(data.mixes);
-  //     })
-  //     .error(function() {
-  //       console.log('Unable to retrieve mix.');
-  //     })
-  //   });
-  // }
 
   $rootScope.$watch('currentMix', function(newVal, oldVal) {
     if(newVal !== null && newVal!==oldVal) {

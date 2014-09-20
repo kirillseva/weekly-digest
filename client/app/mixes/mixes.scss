@@ -1,0 +1,27 @@
+.mix {
+  position: relative;
+  // display: block;
+  // float: center;
+  width:80%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width:500px;
+}
+
+.mix img {
+  border: 10px solid #f7f7f7;
+  border-bottom: 30px solid #f7f7f7;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+  margin-bottom: 10px;
+}
+
+.mix p {
+  position: absolute;
+  text-align: left;
+  width: 100%;
+  bottom: 0px;
+  font: 400 22px/1 'HelveticaNeue-Light';
+  color: #888;
+}

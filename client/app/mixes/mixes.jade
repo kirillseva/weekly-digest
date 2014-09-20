@@ -1,0 +1,11 @@
+div(ng-include='"components/navbar/navbar.html"')
+
+
+.container
+  h1 Mixes
+.container(id="container" ng-controller="MixesCtrl")
+  div(masonry="" column-width="190")
+    .item(class="masonry-brick" ng-repeat="mix in mixes.slice(0,mixes.length-1)")
+      .mix
+        p {{mix.name}}
+        img(src="{{mix.cover_urls.sq250}}" ng-click="selectMix(mix)")
